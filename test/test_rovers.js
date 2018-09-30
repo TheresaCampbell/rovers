@@ -1,3 +1,4 @@
-const assert = require("chai").assert;
+const chai = require("chai");
+const assert = chai.assert;
 const rovers = require("../rovers.js");
 
