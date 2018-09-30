@@ -1,19 +1,27 @@
 const fs = require("fs");
 
 const input = fs.readFileSync('directions.txt').toString().split('\n');
-console.log("Array of Instructions: ", input);
+console.log("Input: ", input);
 
 const maxPositionX = input[0].split(' ')[0];
 const maxPositionY = input[0].split(' ')[1];
 
-let x = Number(input[1].split(' ')[0]);
-let y = Number(input[1].split(' ')[1]);
+const roverOne = input.slice(1, 3);
+const roverTwo = input.slice(3, 5);
+
+let x = (rover) => {
+  let xCoordinate = Number(rover[0].split(' ')[0]);
+  return xCoordinate;
+}
+
+let y = (rover) => {
+  let yCoordinate = Number(rover[0].split(' ')[1]);
+  return yCoordinate;
+}
 
 let startDirection = input[1].split(' ')[2];
-console.log("X: ", x, " Y: ", y, " Starting Direction: ", startDirection);
 
 const instructions = input[2].split("");
-console.log("Instructions: ", instructions);
 
 const compass = ['N', 'E', 'S', 'W'];
 
@@ -24,6 +32,7 @@ for(i = 0; i < compass.length; i++) {
     compassIndex = i;
   }
 }
+
 
 for(i = 0; i < instructions.length; i++) {
   if (instructions[i] === 'L') {
@@ -59,5 +68,6 @@ for(i = 0; i < instructions.length; i++) {
       }
     }
   }
-console.log("Final Position: ", x, y, compass[compassIndex]);
 }
+
+console.log("Final Position: ", x, y, compass[compassIndex]);
