@@ -59,5 +59,5 @@ for(i = 0; i < instructions.length; i++) {
       }
     }
   }
-console.log("Compass Index: ", compass[compassIndex]);
+console.log("Final Position: ", x, y, compass[compassIndex]);
 }
