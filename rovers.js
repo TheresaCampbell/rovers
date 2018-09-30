@@ -36,6 +36,28 @@ for(i = 0; i < instructions.length; i++) {
     if (compassIndex === compass.length) {
       compassIndex = 0
     }
+  } else if (instructions[i] === 'M') {
+    if (compass[compassIndex] === 'N') {
+      y += 1;
+      if (y > maxPositionY) {
+        y = maxPositionY;
+      }
+    } else if (compass[compassIndex] === 'E') {
+      x += 1;
+      if (x > maxPositionX) {
+        y = maxPositionX;
+      }
+    } else if (compass[compassIndex] === 'S') {
+      y -= 1;
+      if (y < 0) {
+        y = 0;
+      }
+    } else if (compass[compassIndex] === 'W') {
+      x -= 1;
+      if (x < 0) {
+        x = 0;
+      }
+    }
   }
-console.log("Compass Index: ", compassIndex);
+console.log("Compass Index: ", compass[compassIndex]);
 }
