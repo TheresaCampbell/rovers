@@ -8,33 +8,21 @@ const maxPositionY = input[0].split(' ')[1];
 const roverOne = input.slice(1, 3);
 const roverTwo = input.slice(3, 5);
 
-console.log("Rover One: ", roverOne);
+let rovers = [roverOne, roverTwo];
 
-//Put these into an object (or class?) later
-let xCoordinate = '';
-let yCoordinate = '';
-let facing = '';
-
-//Finding starting X Coordinate for a given rover.
-let x = (rover) => {
-  xCoordinate = Number(rover[0].split(' ')[0]);
-  return xCoordinate;
-};
-
-//Finding starting Y Coordinate for a given rover.
-let y = (rover) => {
-  yCoordinate = Number(rover[0].split(' ')[1]);
-  return yCoordinate;
-};
-
-//Finding starting direction for a given rover.
-let startDirection = (rover) => {
-  facing = rover[0].split(' ')[2];
-  return facing;
-};
+rovers.forEach(function(rover) {
+  let x = Number(rover[0].split(' ')[0]);
+  let y = Number(rover[0].split(' ')[1]);
+  let startDirection = rover[0].split(' ')[2];
+  console.log("StartX: ", x);
+  console.log("StartY: ", y);
+  console.log("Start Direction: ", startDirection);
+})
 
 //Finding a given rover's instructions.
-// const instructions = input[2].split("");
+// let instructions = (rover) => {
+//   input[2].split("");
+// }
 
 // const compass = ['N', 'E', 'S', 'W'];
 
@@ -85,4 +73,4 @@ let startDirection = (rover) => {
 
 // console.log("Final Position: ", x, y, compass[compassIndex]);
 
-module.exports = { x: x, y: y, startDirection: startDirection };
+module.exports = {};
