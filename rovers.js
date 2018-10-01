@@ -1,5 +1,4 @@
 const fs = require("fs");
-
 const input = fs.readFileSync('directions.txt').toString().split('\n');
 console.log("Input: ", input);
 
@@ -9,22 +8,32 @@ const maxPositionY = input[0].split(' ')[1];
 const roverOne = input.slice(1, 3);
 const roverTwo = input.slice(3, 5);
 
-function count(arr) {
-  return arr.length;
-}
+console.log("Rover One: ", roverOne);
 
+//Put these into an object (or class?) later
+let xCoordinate = '';
+let yCoordinate = '';
+let facing = '';
+
+//Finding starting X Coordinate for a given rover.
 let x = (rover) => {
-  let xCoordinate = Number(rover[0].split(' ')[0]);
+  xCoordinate = Number(rover[0].split(' ')[0]);
   return xCoordinate;
-}
+};
 
+//Finding starting Y Coordinate for a given rover.
 let y = (rover) => {
-  let yCoordinate = Number(rover[0].split(' ')[1]);
+  yCoordinate = Number(rover[0].split(' ')[1]);
   return yCoordinate;
-}
+};
 
-// let startDirection = input[1].split(' ')[2];
+//Finding starting direction for a given rover.
+let startDirection = (rover) => {
+  facing = rover[0].split(' ')[2];
+  return facing;
+};
 
+//Finding a given rover's instructions.
 // const instructions = input[2].split("");
 
 // const compass = ['N', 'E', 'S', 'W'];
@@ -76,4 +85,4 @@ let y = (rover) => {
 
 // console.log("Final Position: ", x, y, compass[compassIndex]);
 
-module.exports = { x: x, y: y };
+module.exports = { x: x, y: y, startDirection: startDirection };
