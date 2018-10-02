@@ -7,8 +7,12 @@ const rovers = [input.slice(1, 3), input.slice(3, 5)];
 const compass = ['N', 'E', 'S', 'W'];
 
 
-const findCompassIndex = (direction) => {
-
+const findCompassIndex = (direction, rover) => {
+  for(i = 0; i < compass.length; i++) {
+    if (compass[i] === direction) {
+      rover.compassIndex = i;
+    }
+  }
 }
 
 rovers.forEach(function(rover) {
@@ -19,7 +23,7 @@ rovers.forEach(function(rover) {
     instructions: rover[1].split(""),
     compassIndex: ''
   };
-  console.log("Rover: ", r);
+  // console.log("Rover: ", r);
 })
 //   const startPosition = rover[0].split(' ');
 //   let x = Number(startPosition[0]);
