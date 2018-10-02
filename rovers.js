@@ -7,6 +7,10 @@ const rovers = [input.slice(1, 3), input.slice(3, 5)];
 const compass = ['N', 'E', 'S', 'W'];
 
 
+const findCompassIndex = (direction) => {
+
+}
+
 rovers.forEach(function(rover) {
   r = {
     x: Number(rover[0].split(' ')[0]),
@@ -73,4 +77,4 @@ rovers.forEach(function(rover) {
 
 
 
-// module.exports = {};
+module.exports = {findCompassIndex: findCompassIndex};
