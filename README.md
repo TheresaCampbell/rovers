@@ -8,8 +8,10 @@ Two Mars rovers on a grid-like plateau need YOUR help to know where they should 
 2. In the command line, run `npm install` to install dependencies
 3. Directions for the rovers are also specified in the command line. A sample .txt file exists in the working directory for you to use, but feel free to use it as an example to create your own directions. To use the sample directions, run `node rovers.js directions.txt`
 4. The output will be each rover's final position: its x coordinate, y coordinate, and compass direction which it is facing. The output for `directions.txt` is:
-`1 3 N
-5 1 E`
+```
+1 3 N
+5 1 E
+```
 
 ## Challenges
 
