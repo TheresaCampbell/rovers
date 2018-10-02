@@ -7,38 +7,29 @@ const rovers = [input.slice(1, 3), input.slice(3, 5)];
 const compass = ['N', 'E', 'S', 'W'];
 
 
-const findCompassIndex = (direction, rover) => {
+const findCompassIndex = (direction, r) => {
   for(i = 0; i < compass.length; i++) {
     if (compass[i] === direction) {
-      rover.compassIndex = i;
+      r.compassIndex = i;
     }
   }
 }
 
-rovers.forEach(function(rover) {
-  r = {
-    x: Number(rover[0].split(' ')[0]),
-    y: Number(rover[0].split(' ')[1]),
-    direction: rover[0].split(' ')[2],
-    instructions: rover[1].split(""),
+const movement = (instructions, r) => {
+
+}
+
+rovers.forEach(function(r) {
+  rover = {
+    x: Number(r[0].split(' ')[0]),
+    y: Number(r[0].split(' ')[1]),
+    direction: r[0].split(' ')[2],
+    instructions: r[1].split(""),
     compassIndex: ''
   };
   // console.log("Rover: ", r);
 })
-//   const startPosition = rover[0].split(' ');
-//   let x = Number(startPosition[0]);
-//   let y = Number(startPosition[1]);
-//   const direction = startPosition[2];
 
-//   const instructions = rover[1].split("");
-
-//   let compassIndex = '';
-
-//   for(i = 0; i < compass.length; i++) {
-//     if (compass[i] === direction) {
-//       compassIndex = i;
-//     }
-//   }
 
 //   for(i = 0; i < instructions.length; i++) {
 //     if (instructions[i] === 'L') {
@@ -81,4 +72,4 @@ rovers.forEach(function(rover) {
 
 
 
-module.exports = {findCompassIndex: findCompassIndex};
+module.exports = {findCompassIndex: findCompassIndex, movement: movement};
